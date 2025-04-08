@@ -241,11 +241,30 @@ html {
 
 /* Logo styles */
 .nav-logo {
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform-origin: center;
+  cursor: pointer;
 }
 
 .nav-logo:hover {
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.15));
   transform: translateY(-2px);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.nav-logo:active {
+  transform: scale(0.95);
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.nav-logo:hover {
+  animation: logoFloat 2s ease-in-out infinite;
 }

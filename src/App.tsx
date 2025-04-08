@@ -49,9 +49,11 @@ function App() {
             <img 
               src={logo} 
               alt="Logo" 
+              onClick={scrollToTop}
               className="w-12 h-12 nav-logo" 
               style={{
-                animation: mounted ? 'fadeInDown 0.5s ease-out forwards' : 'none'
+                animation: mounted ? 'fadeInDown 0.5s ease-out forwards' : 'none',
+                filter: darkMode ? 'brightness(1.2)' : 'none'
               }}
             />
             <button
